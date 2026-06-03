@@ -22,12 +22,12 @@ QUIC identifies connections using unique IDs rather than IP addresses. This mean
 * Answer: I cannot think of anyone for now
 
 ## Product Thinking
-### Question1 : You're building a blog for a famous chef who wants "more traffic." How does semantic HTML — especially <article>, <header>, <main>, <aside> — help search engines understand and rank their content? Be specific.
+### Question1 : You're building a blog for a famous chef who wants "more traffic." How does semantic HTML — especially ```<article>, <header>, <main>, <aside>``` — help search engines understand and rank their content? Be specific.
 * Answer:
-<article>: It helps understand and isolate the main subject of the page. it also help indicate to search engines what content is most relevant on the page. For example for a chef company an article element content can be on the important of the product the chef is producing.
-<header>: It helps the search engine identifies the site name, primary logo and essential navigation link, so the site would be easily assessed and reached.
-<main>: It can only be one on a page and its the primary focus of the web page, making it significantly easier for algorithms to determine exactly what keyword queries the page should be ranked for, and also help to find information quickly.
-<aside>: It provide relevant links or secondary references.
+```<article>```: It helps understand and isolate the main subject of the page. it also help indicate to search engines what content is most relevant on the page. For example for a chef company an article element content can be on the important of the product the chef is producing.
+```<header>```: It helps the search engine identifies the site name, primary logo and essential navigation link, so the site would be easily assessed and reached.
+```<main>```: It can only be one on a page and its the primary focus of the web page, making it significantly easier for algorithms to determine exactly what keyword queries the page should be ranked for, and also help to find information quickly.
+```<aside>```: It provide relevant links or secondary references.
 
 ### Question2: Edge computing moves processing closer to users. Imagine you're designing a real-time multiplayer game. What edge computing benefits would matter most, and why?
 * Answer: Edge Node Layer
@@ -39,16 +39,16 @@ QUIC identifies connections using unique IDs rather than IP addresses. This mean
 ---
 
 ## Class Two - Typography & Information Hierarchy
-### Question1: Explain the difference between <em> and <i>. When would you use each? Provide a real example from your own writing.
-* Answer: <em>: em it means emphasis
-          <i>: it means italic
+### Question1: Explain the difference between ```<em> and <i>```. When would you use each? Provide a real example from your own writing.
+* Answer: em: em it means emphasis
+          i: it means italic
           both elements italicize the text both their functionality differs.
 Emphasis is used to place extra stress on the emphasized word, making it more accessible and show importance.
-e.g <p>Here is the <em>rough sheet</em> for the assignment</p>
+e.g ```<p>Here is the <em>rough sheet</em> for the assignment</p>```
 Italics is to show difference in the word, maybe a scientific name, technical terms, foreign words etc which doesnot add any emphasis to the content, just appear as alternative voice, mood or style.
-e.g <p><i>Cannabis sativa<i> is being smoked my most youth in Nigeria.</p>
+e.g ```<p><i>Cannabis sativa<i> is being smoked my most youth in Nigeria.</p>```
 Example to combine the functionality
-<p><em>Everyone should take care of their mental health.</em> avoid burnout, maintain work-life balance and seek support when needed.The focus should be on creating a <i>environnement de soutien</i> for everyone.</p>.
+```<p><em>Everyone should take care of their mental health.</em> avoid burnout, maintain work-life balance and seek support when needed.The focus should be on creating a <i>environnement de soutien</i> for everyone.</p>```.
 
 ### Question2: Screen readers treat certain elements specially. List at least 3 HTML elements with special screen reader behaviour and explain why the browser handles them that way.
 * Answer:
@@ -60,27 +60,27 @@ Example to combine the functionality
 ### Question3: ARIA labels can save bad HTML, but they're not a substitute for semantic tags. Give an example of when you'd USE an aria-label — and when you should FIX YOUR HTML instead.
 * Answer: 
 1. arial-label is used when a semantic element like button has an svg element inside it without a text, so for screen reader to understand it better arial-label would be used 
-E.g <button aria-label="Click">
+E.g ```<button aria-label="Click">
         <icon>...</icon> <!-- A cart image to pick an item -->
-    </button>
+    </button>```
 Excerpt from  MDN: Use aria-label when an interactive element relies entirely on visuals (like an icon or SVG) and has no visible text to announce to screen readers.
 2. When HTML needs to be fix is when non-sematic HTML is used like *div* or *span*
-E.g <div class="submit-btn" aria-label="Submit Form">
+E.g ```<div class="submit-btn" aria-label="Submit Form">
         Click Me
-    </div>
+    </div>```
     instead use a semantic element 
-    <button type="submit">Submit</button>
+    ```<button type="submit">Submit</button>```
 
 ## Accessibility Reflection
 ### Question1 : Find a public website (government, bank, or similar) and test its accessibility. Can you tab through the page? Are form labels visible? Do buttons have clear focus states? Document your findings with specific examples.
 * Answer: Couldnot get any.
 
 ## Product Thinking
-### Question1: You're designing a technical documentation page for an API — users are developers who need to scan quickly. How would you structure the information hierarchy? Describe what your <h1> / <h2> / <h3> hierarchy would look like (describe actual content, not just tags).
+### Question1: You're designing a technical documentation page for an API — users are developers who need to scan quickly. How would you structure the information hierarchy? Describe what your ```<h1> / <h2> / <h3>``` hierarchy would look like (describe actual content, not just tags).
 * Answer: For a technical documentation page for an API. 
-<h1>: It is the heading, it will be the API name e.g Weather Forecast
-<h2>: It is the sub-heading, it will have the functional heading e.g the form that take the input label.
-<h3>: It is the sub- sub-heading, it will contain the authentication part.
+```<h1>```: It is the heading, it will be the API name e.g Weather Forecast
+```<h2>```: It is the sub-heading, it will have the functional heading e.g the form that take the input label.
+```<h3>```: It is the sub- sub-heading, it will contain the authentication part.
 
 ---
 
@@ -88,11 +88,11 @@ E.g <div class="submit-btn" aria-label="Submit Form">
 ### Question1: A designer gives you a 5 MB PNG for a hero image. Explain step-by-step how you would optimize this for a production website in 2026. Include: formats, tools, and reasoning behind each choice.
 * Answer: For good result the image will need to be resized into different width for responsive designs. 
 picture element will be used it will tell the browser to pick the best image for different screen sizes.
-<picture>
+```<picture>
     <source></source>
     <source></source>
     <img>
-</picture>
+</picture>```
 It will fetch image with the highest priority. Thou i didnot fully understand it.
 
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
