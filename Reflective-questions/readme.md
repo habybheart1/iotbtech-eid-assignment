@@ -88,28 +88,65 @@ E.g ```<div class="submit-btn" aria-label="Submit Form">
 ### Question1: A designer gives you a 5 MB PNG for a hero image. Explain step-by-step how you would optimize this for a production website in 2026. Include: formats, tools, and reasoning behind each choice.
 * Answer: For good result the image will need to be resized into different width for responsive designs. 
 picture element will be used it will tell the browser to pick the best image for different screen sizes.
-```<picture>
-    <source></source>
-    <source></source>
-    <img>
-</picture>```
+
+```<picture>```
+    ```<source></source>```
+    ```<source></source>```
+    ```<img>```
+```</picture>```
 It will fetch image with the highest priority. Thou i didnot fully understand it.
 
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
 * Answer: srcset is an attribute on img element, it gives the browsers different options to download the image best fit for different screen sizes.
-e.g <img src="image-800.jpg"
+e.g ```<img src="image-800.jpg"
     srcset="image-400.jpg 400w,
             image-800.jpg 800w,
             image-1200.jpg 1200w"
             sizes="(max-width:600px) 100vw, 50vw"
-            alt="Responsible images"/>
+            alt="Responsible images"/>```
     FRom the code snippet for mobile screen, it should display full screen(100vw) while other screen sizes it should take half screen.
 
 ### Question3: Why is rel="noopener" important when using target="_blank"? What security vulnerability does it prevent? Explain in terms a non-technical person would understand.
 * Answer: rel="noopener" is important for security purpose. It prevent malicious site (hackers) from hijacking your website and data.
+
 ## Engineering Thinking
+
 ### Question1: You need to display 50 product images on a page. What's your optimization strategy? Consider: lazy loading, format choice, CDN, and responsive sizing.
 * Answer: I will resize the image to reduce the size preferably use AVIF images. Not sure of the response.
 
 ---
 
+## Class 4 - Modern Forms & User Experience
+
+### Question1: A user submits a form with an invalid email. Describe the user experience flow: what happens with client-side-only validation? Server-side-only? Why do you need both?
+
+* Answer: When a user enters an invalid email in a form, if client-side validation is set. The validation will initiated immediately a wrong email is written, it can be an error message, border color change to red or a pop up message to alert invalid email thus the form wouldnot be submitted until the error is fixed.
+For the server-side validation: The validation is initiated after the user click on the submit button, it would flag an error message and the form wouldnot be saved or submitted.
+Why we need both the server and client-side validation is for security reasons and storage. moreso, it is the best practice to use as a developer. The client side validation help correct mistakes quickly while on the otherhand the server side ensure submitted data are valid and secure before storing and processing.
+
+### Question2: Explain the autocomplete attribute. List 5 different values and when you'd use each one in a real form.
+
+* Answer: Autocomplete attribute helps to fill form automatically using the initial data previously entered by the user. For Example if you want to fill a form online mostly time autocomplete are always on and there would be suggestion for each input which makes it easier and less prone to typoerror.
+``` <main> ```
+        ```<input type="text" name="firstName" placeholder="First Name" autocomplete = "first-name">```
+        ```<input type="text" name="lastName" placeholder="Last Name" autocomplete = "last-name">```
+        ```<input type="email" name="email" placeholder="Email" autocomplete = "email">```
+        ```<input type="password" name="password" placeholder="Password" autocomplete = "current-password">```
+        ```<input type="tel" name="phone" placeholder="Phone Number" autocomplete = "phone number">```
+        ```<input type="submit" value="Create Account">```
+    ```</main>```
+
+## Product Thinking
+### Question1: You're building a multi-step job application form (5 steps). The user loses internet on step 4. How would you design the form to handle this gracefully? Think about: progress saving, validation strategy, error messaging.
+
+* Answer: The form would be designed to prevent lose of information by saving each steps in the localstorage of the server. The client and server side validation should be used. Error message should be displayed at any point if its internet connection problem or anything that problem. Also a message should be display if any problem arises that can prevent the form from saving at each step.
+
+### Question2: When would you use a native ```<select>``` versus a custom dropdown? Consider: accessibility, mobile UX, development time, and edge cases.
+
+* Answer: native select is commonly used for a simple application form to select from options that are not too many e.g gender, local government, age-range, qualification etc. While a custom select is used for a large dataset or data that is fetched from an API or that has more than hundreds of options or that require the used of icons, images or illustrations in the options. e.g countries worldwide, all kinds of occupations or course application. Custom dropdown is used when functionality is needed that a native dropdown cannot provide.
+
+## Engineering Best Practice
+
+### Question1: Describe (or write) a password input that shows: a strength meter, requirements checklist (8 chars, uppercase, number, symbol), and a show/hide toggle. Focus on accessibility.
+
+* Answer: 
