@@ -60,9 +60,11 @@ Example to combine the functionality
 ### Question3: ARIA labels can save bad HTML, but they're not a substitute for semantic tags. Give an example of when you'd USE an aria-label — and when you should FIX YOUR HTML instead.
 * Answer: 
 1. arial-label is used when a semantic element like button has an svg element inside it without a text, so for screen reader to understand it better arial-label would be used 
-E.g ```<button aria-label="Click">
+E.g ```html
+    <button aria-label="Click">
         <icon>...</icon> <!-- A cart image to pick an item -->
-    </button>```
+    </button>
+```
 Excerpt from  MDN: Use aria-label when an interactive element relies entirely on visuals (like an icon or SVG) and has no visible text to announce to screen readers.
 2. When HTML needs to be fix is when non-sematic HTML is used like *div* or *span*
 E.g ```<div class="submit-btn" aria-label="Submit Form">
@@ -89,21 +91,25 @@ E.g ```<div class="submit-btn" aria-label="Submit Form">
 * Answer: For good result the image will need to be resized into different width for responsive designs. 
 picture element will be used it will tell the browser to pick the best image for different screen sizes.
 
-```<picture>```
-    ```<source></source>```
-    ```<source></source>```
-    ```<img>```
-```</picture>```
+```HTML
+<picture>
+    <source></source>
+    <source></source>
+    <img>
+</picture>
+```
 It will fetch image with the highest priority. Thou i didnot fully understand it.
 
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
 * Answer: srcset is an attribute on img element, it gives the browsers different options to download the image best fit for different screen sizes.
-e.g ```<img src="image-800.jpg"
+e.g ```HTML
+<img src="image-800.jpg"
     srcset="image-400.jpg 400w,
             image-800.jpg 800w,
             image-1200.jpg 1200w"
             sizes="(max-width:600px) 100vw, 50vw"
-            alt="Responsible images"/>```
+            alt="Responsible images"/>
+    ```
     FRom the code snippet for mobile screen, it should display full screen(100vw) while other screen sizes it should take half screen.
 
 ### Question3: Why is rel="noopener" important when using target="_blank"? What security vulnerability does it prevent? Explain in terms a non-technical person would understand.
@@ -149,4 +155,88 @@ Why we need both the server and client-side validation is for security reasons a
 
 ### Question1: Describe (or write) a password input that shows: a strength meter, requirements checklist (8 chars, uppercase, number, symbol), and a show/hide toggle. Focus on accessibility.
 
+* Answer: Would revisit later 
+
+---
+
+## class 5 - The CSS Engine — Box Model & Specificity
+
+### Question1: Draw a box and label every part: content, padding, border, margin. Then explain: if two adjacent divs have margin-bottom: 20px and margin-top: 30px, how much space is between them, and why?
+
+* Answer: ![Image of Bos](./diagram3.svg)
+The blue background and pink shows the margin respectively
+The yellow and black represent border respectively
+The red and white represent the padding respectively
+The total space in between them will be 50px
+
+### Question2: Explain the CSS specificity hierarchy. Which selector wins from these three: .header nav ul li a / nav a.active / .nav-links a? Show your calculation.
+
 * Answer: 
+CSS Specificity hierarchy has 4 selectors types (Inline, IDs, Classes, Elements) each represents differents values Inline has the highest specificity of 1000 while Elements takes the least specificity of 1.
+
+.header nav ul li a = (0, 0, 1, 4) it contain 1 class(1 * 10) and 4 elements(4 * 1) = 14
+nav a .active = (0, 0, 1, 2) it contain 1 class(1 * 10) and 2 elements(2 * 1) = 12
+.nav-links a = (0, 0, 1, 1) it contain 1 class(1 * 10) and 1 elements(1 * 1) = 11
+
+### Question3: What is the "cascade" in CSS? Describe a situation where understanding the cascade would save you from writing unnecessary CSS.
+
+* Answer: Cascade is the process by which the browser determines which CSS rule will be applied to an element.
+e.g
+```CSS
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+main{
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+} ```
+
+```HTML
+<main>
+    <h1>Hi welcome to my class</h1>
+    <p>This class is to explain cascading in CSS</p>
+</main>
+```
+
+## Engineering Thinking
+
+### Question1: You add padding: 10px to an element and it becomes wider than expected. What's happening? What's the fix? Explain using box-sizing.
+
+* Answer: when padding of 10px is added to an element and it becomes wider than expected it means the box-sizing is content box which is the default style and in that case the declared width is added to the content area, any padding, margin or border are added on top of that width which would make it wider.
+To fix it, a root selector can be used and the box-sizing should be border-box.
+```CSS
+*{
+    box-sizing: border-box;
+}
+```
+
+### Question2: Create a CSS-only visual that shows the difference between content-box and border-box. Use borders and different padding values to make the difference obvious. Add comments explaining your reasoning.
+
+* Answer: 
+```CSS 
+.a{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.b{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    padding: 10px;
+    box-sizing: content-box;
+}
+```
+![CSS Boxing](./css-boxing.PNG)
+The 2 Images width are 100px and have a padding of 10px each but the blue box appears bigger than the red box because its content-box and the padding is added to the width so we have a total of 10 + 100 + 10 = 120px width
+while the red box on the otherhand have a total width of the 100px declared because the 10px padding is added to the content area of the box.
+
+---
+
+## Class 6 - 
