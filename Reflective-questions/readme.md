@@ -58,20 +58,28 @@ Example to combine the functionality
 4. Main Elements: users can skip some content and go directly to the primary content.
 
 ### Question3: ARIA labels can save bad HTML, but they're not a substitute for semantic tags. Give an example of when you'd USE an aria-label — and when you should FIX YOUR HTML instead.
-* Answer: 
+
+* Answer
+
 1. arial-label is used when a semantic element like button has an svg element inside it without a text, so for screen reader to understand it better arial-label would be used 
-E.g ```html
+E.g 
+```html
     <button aria-label="Click">
         <icon>...</icon> <!-- A cart image to pick an item -->
     </button>
 ```
 Excerpt from  MDN: Use aria-label when an interactive element relies entirely on visuals (like an icon or SVG) and has no visible text to announce to screen readers.
+
 2. When HTML needs to be fix is when non-sematic HTML is used like *div* or *span*
-E.g ```<div class="submit-btn" aria-label="Submit Form">
+E.g 
+```html 
+    <div class="submit-btn" aria-label="Submit Form">
         Click Me
     </div>```
     instead use a semantic element 
-    ```<button type="submit">Submit</button>```
+    ```html
+    <button type="submit">Submit</button>
+```
 
 ## Accessibility Reflection
 ### Question1 : Find a public website (government, bank, or similar) and test its accessibility. Can you tab through the page? Are form labels visible? Do buttons have clear focus states? Document your findings with specific examples.
@@ -103,14 +111,14 @@ It will fetch image with the highest priority. Thou i didnot fully understand it
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
 * Answer: srcset is an attribute on img element, it gives the browsers different options to download the image best fit for different screen sizes.
 e.g ```HTML
-<img src="image-800.jpg"
-    srcset="image-400.jpg 400w,
+        <img src="image-800.jpg"
+             srcset="image-400.jpg 400w,
             image-800.jpg 800w,
             image-1200.jpg 1200w"
             sizes="(max-width:600px) 100vw, 50vw"
             alt="Responsible images"/>
     ```
-    FRom the code snippet for mobile screen, it should display full screen(100vw) while other screen sizes it should take half screen.
+    From the code snippet for mobile screen, it should display full screen(100vw) while other screen sizes it should take half screen.
 
 ### Question3: Why is rel="noopener" important when using target="_blank"? What security vulnerability does it prevent? Explain in terms a non-technical person would understand.
 * Answer: rel="noopener" is important for security purpose. It prevent malicious site (hackers) from hijacking your website and data.
@@ -133,21 +141,24 @@ Why we need both the server and client-side validation is for security reasons a
 ### Question2: Explain the autocomplete attribute. List 5 different values and when you'd use each one in a real form.
 
 * Answer: Autocomplete attribute helps to fill form automatically using the initial data previously entered by the user. For Example if you want to fill a form online mostly time autocomplete are always on and there would be suggestion for each input which makes it easier and less prone to typoerror.
-``` <main> ```
-        ```<input type="text" name="firstName" placeholder="First Name" autocomplete = "first-name">```
-        ```<input type="text" name="lastName" placeholder="Last Name" autocomplete = "last-name">```
-        ```<input type="email" name="email" placeholder="Email" autocomplete = "email">```
-        ```<input type="password" name="password" placeholder="Password" autocomplete = "current-password">```
-        ```<input type="tel" name="phone" placeholder="Phone Number" autocomplete = "phone number">```
-        ```<input type="submit" value="Create Account">```
-    ```</main>```
+```html
+     <main> 
+        <input type="text" name="firstName" placeholder="First Name" autocomplete = "first-name">
+        <input type="text" name="lastName" placeholder="Last Name" autocomplete = "last-name">
+        <input type="email" name="email" placeholder="Email" autocomplete = "email">
+        <input type="password" name="password" placeholder="Password" autocomplete = "current-password">
+        <input type="tel" name="phone" placeholder="Phone Number" autocomplete = "phone number">
+        <input type="submit" value="Create Account">
+    </main>
+```
 
 ## Product Thinking
+
 ### Question1: You're building a multi-step job application form (5 steps). The user loses internet on step 4. How would you design the form to handle this gracefully? Think about: progress saving, validation strategy, error messaging.
 
 * Answer: The form would be designed to prevent lose of information by saving each steps in the localstorage of the server. The client and server side validation should be used. Error message should be displayed at any point if its internet connection problem or anything that problem. Also a message should be display if any problem arises that can prevent the form from saving at each step.
 
-### Question2: When would you use a native ```<select>``` versus a custom dropdown? Consider: accessibility, mobile UX, development time, and edge cases.
+### Question2: When would you use a native <select> versus a custom dropdown? Consider: accessibility, mobile UX, development time, and edge cases.
 
 * Answer: native select is commonly used for a simple application form to select from options that are not too many e.g gender, local government, age-range, qualification etc. While a custom select is used for a large dataset or data that is fetched from an API or that has more than hundreds of options or that require the used of icons, images or illustrations in the options. e.g countries worldwide, all kinds of occupations or course application. Custom dropdown is used when functionality is needed that a native dropdown cannot provide.
 
@@ -163,7 +174,8 @@ Why we need both the server and client-side validation is for security reasons a
 
 ### Question1: Draw a box and label every part: content, padding, border, margin. Then explain: if two adjacent divs have margin-bottom: 20px and margin-top: 30px, how much space is between them, and why?
 
-* Answer: ![Image of Bos](./diagram3.svg)
+* Answer: 
+s![Image of Bos](./diagram3.svg)
 The blue background and pink shows the margin respectively
 The yellow and black represent border respectively
 The red and white represent the padding respectively
