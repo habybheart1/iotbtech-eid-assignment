@@ -251,4 +251,11 @@ while the red box on the otherhand have a total width of the 100px declared beca
 
 ---
 
-## Class 6 - 
+## Class 6 - Flexbox Mastery
+
+### Question1: Explain the difference between flex-grow, flex-shrink, and flex-basis. Use a real-world analogy (no code).
+* Answer: flex-grow serves as the maximum size; flex shrink is the minimum size; flex basis is the preferred size. By default flex is (1 0 auto) for flex grow, flex shrink and flex basis.
+flex grow is how much space a flex item can contain. If there are more space for an item will grow to fill up the spaces.
+flex basis is the preferred width but it can exceed if otherwise stated.
+flex shrink is for an item to shrink based on the available spaces, by default is set to 0(Zero) donot shrink below the actual width but if shrink is set to 1 then shrink becomes true and the item can be reduce to a point it can reduce. 
+
