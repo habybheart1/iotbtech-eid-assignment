@@ -5,35 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build A Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <main class="calculator">
-        <div>
-            <input id="display" readonly>
-        <div>
-            <button class="clear" id="clear" onclick="clearDisplay()">C</button>
-            <button class="backspace" id="backspace" onclick="backspace()">⌫</button>
-            <button class="btn" id="divide">÷</button>
-            <button class="btn" id="multiply">×</button>
-            <button class="btn" id="seven">7</button>
-            <button class="btn" id="eight">8</button>
-            <button class="btn" id="nine">9</button>
-            <button class="btn" id="subtract">-</button>
-            <button class="btn" id="four">4</button>
-            <button class="btn" id="five">5</button>
-            <button class="btn" id="six">6</button>
-            <button class="btn" id="add">+</button>
-            <button class="btn" id="one">1</button>
-            <button class="btn" id="two">2</button>
-            <button class="btn" id="three">3</button>
-            <button  id="equals" onclick="calculate()">=</button>
-            <button class="btn" id="zero">0</button>
-            <button class="btn" id="decimal">.</button>
-            <button class="btn" id="percent">%</button>
-            <button id="power" onclick="displayDigit.value += '^'">^</button>
-            <button  id="sqrt"  onclick="displayDigit.value = calculateSqrt(displayDigit.value)">√</button>
-            <button  id="factorial" onclick="displayDigit.value = factorial(displayDigit.value)">!</button>
+    <main class="w-5/6 h-auto flex flex-col items-center justify-center bg-green-400 
+    border-2 border-green-900 rounded-xl p-1 m-auto mt-20 md:max-w-1/6 ">
+        <div class="w-auto h-auto m-1 bg-green-200 border-2 border-none rounded-xl px-2">
+            <input id="display" readonly class="w-full h-10 text-right text-2xl font-bold bg-green-200 border-none rounded-xl" type="text">
         </div>
+        <div class="grid grid-cols-4 gap-2 mt-4">
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="percent">%</button>
+            <button id="power" onclick="displayDigit.value += '^'" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">^</button>
+            <button  id="sqrt"  onclick="displayDigit.value = calculateSqrt(displayDigit.value)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">√</button>
+            <button  id="factorial" onclick="displayDigit.value = factorial(displayDigit.value)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">!</button> 
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="seven">7</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="eight">8</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="nine">9</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="subtract">-</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="four">4</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="five">5</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="six">6</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="add">+</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="one">1</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="two">2</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="three">3</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="multiply">×</button>
+            <button class="backspace bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="backspace" onclick="backspace()">⌫</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="zero">0</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="decimal">.</button>
+            <button class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="divide">÷</button>
+            <button class="clear bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" id="clear" onclick="clearDisplay()">C</button>
+            <button  id="equals" onclick="calculate()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded col-span-3">=</button>
+
+            
         </div>
     </main>
  <script src="main.js"></script>   
