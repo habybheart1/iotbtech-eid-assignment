@@ -72,10 +72,3 @@ function calculateSqrt(num) {
 
     return Math.sqrt(number);
 }
-function calculateExponential() {
-    let expression = displayDigit.value;
-
-    expression = expression.replace(/\^/g, '**');
-
-    displayDigit.value = eval(expression);
-}

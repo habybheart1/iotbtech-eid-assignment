@@ -259,3 +259,6 @@ flex grow is how much space a flex item can contain. If there are more space for
 flex basis is the preferred width but it can exceed if otherwise stated.
 flex shrink is for an item to shrink based on the available spaces, by default is set to 0(Zero) donot shrink below the actual width but if shrink is set to 1 then shrink becomes true and the item can be reduce to a point it can reduce. 
 
+### Question2: When would align-items: stretch not work as expected? Give a specific example with code.
+
+* Answer: 
