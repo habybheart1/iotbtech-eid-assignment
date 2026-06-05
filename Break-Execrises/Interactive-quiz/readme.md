@@ -18,3 +18,7 @@ Optional challenge: Add a countdown timer per question
 - Save the answer
 - Display result
 - Persist best score in localStorage
+
+###
+- Build the HTML
+- Create an array of questions, with option and the correct answer

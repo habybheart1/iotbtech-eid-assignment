@@ -261,4 +261,57 @@ flex shrink is for an item to shrink based on the available spaces, by default i
 
 ### Question2: When would align-items: stretch not work as expected? Give a specific example with code.
 
+* Answer: Align-items: stretch would not work if a fixed height has been given to the flex item
+```html
+    <div class="box-container">
+            <div class="box"></div>
+    </div>
+```
+```css
+<style>
+    body {
+        background-color: rgb(218, 88, 88);
+    }
+    .box-container {
+        display: flex;
+        width: 300px;
+        height: 300px;
+        background-color: rgb(70, 57, 57);
+        align-items: stretch;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+    }
+</style>
+```
+
+---
+
+## Engineering Thinking
+
+### Question1: Create a navigation bar with: logo on left, 5 nav items centered, and a "Sign In" button on right — where the nav items stay centered regardless of logo/button width. Show your flexbox solution with explanation.
+
+* Answer: The container is set to display flex, justify-content is space-between so regardless of the size the nav-items will be positioned strictly at the center.
+```css
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+    }
+    .navbar .nav-items {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+```
+
+### Question2: Recreate the Instagram header (Home, Search, Explore, Reels, Messages, Notifications, Create, Profile) using Flexbox. Make it responsive — collapse to hamburger on mobile, show all on desktop. Document your thinking.
+
 * Answer: 
