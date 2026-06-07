@@ -158,7 +158,7 @@ Why we need both the server and client-side validation is for security reasons a
 
 * Answer: The form would be designed to prevent lose of information by saving each steps in the localstorage of the server. The client and server side validation should be used. Error message should be displayed at any point if its internet connection problem or anything that problem. Also a message should be display if any problem arises that can prevent the form from saving at each step.
 
-### Question2: When would you use a native <select> versus a custom dropdown? Consider: accessibility, mobile UX, development time, and edge cases.
+### Question2: When would you use a native ```<select>``` versus a custom dropdown? Consider: accessibility, mobile UX, development time, and edge cases.
 
 * Answer: native select is commonly used for a simple application form to select from options that are not too many e.g gender, local government, age-range, qualification etc. While a custom select is used for a large dataset or data that is fetched from an API or that has more than hundreds of options or that require the used of icons, images or illustrations in the options. e.g countries worldwide, all kinds of occupations or course application. Custom dropdown is used when functionality is needed that a native dropdown cannot provide.
 
@@ -315,3 +315,7 @@ flex shrink is for an item to shrink based on the available spaces, by default i
 ### Question2: Recreate the Instagram header (Home, Search, Explore, Reels, Messages, Notifications, Create, Profile) using Flexbox. Make it responsive — collapse to hamburger on mobile, show all on desktop. Document your thinking.
 
 * Answer: 
+### Steps
+1. created the HTML boilerplate
+2. created css and javascript files and link them to HTML appropraitely.
+3. Designed the desktop view
