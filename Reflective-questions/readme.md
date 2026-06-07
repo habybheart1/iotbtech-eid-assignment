@@ -403,7 +403,7 @@ Couldnot relate it to any practical example.
 
 ---
 
-## Class 12 -
+## Class 12 - Functions & Functional Programming
 ### Question1: What's the difference between a function declaration and a function expression? Why does hoisting behave differently between them?
 
 * Answer; function declaration is just declaring a variable without assignment to any value. Function expression is when the variable has been assigned. 
@@ -420,3 +420,17 @@ NO IDEA
     }
     console.log(taxRate(20000));
 ```
+This is an example of unpure function the rate is declared outside the scope.
+
+### Question3:Explain callbacks and higher-order functions in your own words. Why are they fundamental to JavaScript?
+
+* Answer: callback and higher-order function allows for code reuseability and they enable asynchronous execution.
+
+---
+
+## Class 13 - Data Structures — Arrays & Objects
+
+### Question1 : When would you choose an array over an object for storing data? Give a real example where an object is clearly better.
+
+* Answer: Objects are mostly used for a single entity but arrays are used for ordered collection of similar items, arrays assigned and index for each item and make referencing it easy.
+
