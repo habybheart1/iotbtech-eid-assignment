@@ -111,7 +111,7 @@ It will fetch image with the highest priority. Thou i didnot fully understand it
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
 * Answer: srcset is an attribute on img element, it gives the browsers different options to download the image best fit for different screen sizes.
 e.g ```HTML
-        <img src="image-800.jpg"
+            <img src="image-800.jpg"
              srcset="image-400.jpg 400w,
             image-800.jpg 800w,
             image-1200.jpg 1200w"
@@ -179,7 +179,7 @@ s![Image of Bos](./diagram3.svg)
 The blue background and pink shows the margin respectively
 The yellow and black represent border respectively
 The red and white represent the padding respectively
-The total space in between them will be 50px
+The total space in between them will be 30px, CSS will pick the bigger margin.
 
 ### Question2: Explain the CSS specificity hierarchy. Which selector wins from these three: .header nav ul li a / nav a.active / .nav-links a? Show your calculation.
 
@@ -199,13 +199,15 @@ e.g
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
-}
+}```
+```CSS
 main{
     background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
     text-transform: uppercase;
-} ```
+}
+```
 
 ```HTML
 <main>
