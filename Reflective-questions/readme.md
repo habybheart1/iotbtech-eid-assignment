@@ -110,14 +110,15 @@ It will fetch image with the highest priority. Thou i didnot fully understand it
 
 ### Question2: Explain srcset and when you'd use it. Create a scenario where srcset prevents a problem for mobile users.
 * Answer: srcset is an attribute on img element, it gives the browsers different options to download the image best fit for different screen sizes.
-e.g ```HTML
-            <img src="image-800.jpg"
+e.g 
+```HTML
+        <img src="image-800.jpg"
              srcset="image-400.jpg 400w,
             image-800.jpg 800w,
             image-1200.jpg 1200w"
             sizes="(max-width:600px) 100vw, 50vw"
             alt="Responsible images"/>
-    ```
+ ```
     From the code snippet for mobile screen, it should display full screen(100vw) while other screen sizes it should take half screen.
 
 ### Question3: Why is rel="noopener" important when using target="_blank"? What security vulnerability does it prevent? Explain in terms a non-technical person would understand.
