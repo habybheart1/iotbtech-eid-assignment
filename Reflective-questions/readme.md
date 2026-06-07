@@ -176,7 +176,7 @@ Why we need both the server and client-side validation is for security reasons a
 ### Question1: Draw a box and label every part: content, padding, border, margin. Then explain: if two adjacent divs have margin-bottom: 20px and margin-top: 30px, how much space is between them, and why?
 
 * Answer: 
-s![Image of Bos](./diagram3.svg)
+s![Image of Box](./diagram3.svg)
 The blue background and pink shows the margin respectively
 The yellow and black represent border respectively
 The red and white represent the padding respectively
@@ -322,3 +322,101 @@ flex shrink is for an item to shrink based on the available spaces, by default i
 1. created the HTML boilerplate
 2. created css and javascript files and link them to HTML appropraitely.
 3. Designed the desktop view
+4. Added another nav link for mobile screen hamburger
+5. wrote javascript to make the hamburger active.
+
+## Class 7 - CSS Grid & Layout Complexity
+
+### Question1: When would you choose CSS Grid over Flexbox? Give 3 specific scenarios where Grid is clearly the better tool.
+
+* Answer: CSS Grid is used for 2-directional design i.e layout across both horizontal and vertical axis while Flexbox is unidirectional it can be either horizontal or vertical axis.
+Examples: Grid is used mostly for a website layout, dashboards and complex UI structure.
+
+### Question2: Explain grid-template-areas and when it makes sense to use it over grid-template-columns.
+
+* Answer: Grid-template-area: Is by asigning a name to specific grid cell and also giving it preferred position. it just like a plan for a building e.g its used mostly for website layout. Grid-template-columns shows the sizes and the number of columns. it is used mostly for photogallery and cards.
+
+---
+
+## Class 8- Tailwind CSS Fundamentals
+
+### Question1: Explain the "utility-first" philosophy. Why does Tailwind's creator choose utility classes over semantic/component-based classes?
+
+* Answer: Utility-first philosophy is the tailwind css style that each element is styled in the HTML, it doesnot need the creation of extra sheet for CSS and any chages made is directly on that particular element. it saves time and space
+
+### Question2 : What is the JIT (Just-In-Time) compiler in Tailwind? How does it affect CSS file size in production?
+
+* Answer: Just In Time complier in Tailwind made using custom property using [] (square bracket possible). JIT helps to generate only the needed classes on demand thus making the required sizes smaller.
+
+### Question3 : Your team switches to Tailwind. A teammate complains it makes HTML "ugly with all those classes." Write a response addressing: readability, maintainability, consistency, and performance.
+
+* Answer; Yes, agreed it makes HTML looks ugly but all the same it makes each elements easy to read with their styling properties. it makes the size smaller and prevent opening of another page therby reducing the time spent. It increases the performance and consistency.
+
+---
+
+## Class 9 - Advanced Tailwind & Responsive Design
+
+### Question1: Explain Tailwind's breakpoint system. How does the md: prefix work? How would you create a custom breakpoint for 1200px?
+
+* Answer: Tailwind's breakpoint system use a mobile first design approaches, so any design applied will work for all screen sizes except otherwise stated.
+md: prefix is for 768px screen size and above.
+
+### Question2: What are arbitrary values in Tailwind (e.g., w-[123px])? When would you use them versus extending the config?
+
+* Answer: Arbitrary values in Tailwind are using a custom values not on tailwind. it is mostly used for one-time that does not repeat across the page but extending the config is when the custom values is needed to be used in multiple features.
+
+---
+
+## Class 10 - Memory & Variables
+
+### Question1: Explain the difference between let, const, and var in terms of: scope, hoisting, and reassignment. Why does const not prevent mutation of objects/arrays?
+
+* Answer: Scope: "let" and "const" are block scope can only be accessed in the block of code but var is a function scope.
+Hoisting: "let" and "const" behave in the same way, they throw a reference error but "var" display undefined.
+Reassignment: "const" cannot be reassigned and redeclared, "let" can be redeclared but not reassigned while "var" can be reassigned and redeclared.
+Const doesnot prevent mutation of objects/arrays because the reassignment do not occur during mutation it is just modification.
+
+### Question2: What is the Temporal Dead Zone? Why does it exist? Give an example where TDZ prevents a bug.
+
+* Answer: TDZ is the period between hoisting and initialization. It help to prevent bug, it does not assign undefine for the variable when it is declared with let or const. If var is used javascript would hoist the variable to the top of the scope and initialize it with undefined thereby creating a bug. If the variable is declared with let or const, they are protected by TDZ, it will  throa a ref error, this forces the developer to fix the bug.
+
+### Draw the memory heap vs stack for this code:
+
+* Answer: NO IDEA
+
+### Question2 : You're building a calculator app. Should you use const or let for: the display value, the operator, the previous operand? Justify each choice.
+
+* Answer: let should be used for display value, operator and previous operand because the values are fixed, they would be reassigned as the user perform mathematical operations.
+
+---
+
+## Class 11 - Control Flow & Comparison
+
+### Question1: Explain the difference between == and ===. When would using == cause a bug? Provide a real example.
+
+* Answer: == (loose equality) is used to just compare values only to a variable while === (strict equality) is used to compare both values and datatype.
+Couldnot relate it to any practical example.
+
+### Question2 : What is optional chaining (?.)? Show 3 examples where it prevents errors, and one example where it might hide a bug if overused.
+
+* Answer: Level of understanding no reach this.
+
+---
+
+## Class 12 -
+### Question1: What's the difference between a function declaration and a function expression? Why does hoisting behave differently between them?
+
+* Answer; function declaration is just declaring a variable without assignment to any value. Function expression is when the variable has been assigned. 
+NO IDEA
+
+### Question2: What is a pure function? Why do developers value them? Give an example of a function that is NOT pure and explain why.
+
+* Answer: Pure function are block of code that usually return the same output for the same input and produce no side effects.
+```JS
+    let rate = 5;
+    function taxRate(price){
+        actualPrice = price * rate/100
+        return actualPrice;
+    }
+    console.log(taxRate(20000));
+```

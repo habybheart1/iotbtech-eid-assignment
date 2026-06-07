@@ -11,3 +11,11 @@ hamburger.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     navLinks.classList.remove("active");
 });
+
+
+let rate = 5;
+function taxRate(price){
+    actualPrice = price * rate/100
+    return actualPrice;
+}
+console.log(taxRate(20000));
